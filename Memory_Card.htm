@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 350px;
+            height: 450px;
+        }
+    </style> 
+</head>
+
+<body>
+    <div class="container">
+        <span class="counter">
+            <h1>Punti =
+        </span><span id="counter" class="counter">0</span>
+    </div>
+    <div id="tavoloDaGioco"></div>
+    <h1>Visits:</h1><a href="https://www.freecounterstat.com" title="page counter"><img
+            src="https://counter10.optistats.ovh/private/freecounterstat.php?c=cw3aec88yjtx1ktp5kxzp6uc8qe28hlc" .counter { 
+                font-size: 12px; 
+              }
+            borders="0" title="page counter" alt="page counter"></a> <div class="counter">100</div> 
+    <script>
+        let NcarteGirate = 0
+        letcartaGirata = null
+        let carte = ["kylian-fronte.png", "messi-fronte.png", "fronte3.png", "martinez-fronte.png", "ronaldo-mondiali.webp", "modric-fronte.png", "benzema-fronte.png", "martinez-fronte.png", "kane-fronte.png", "dimaria-fronte.png", "modric-fronte.png", "lukaku-fronte.webp", "gavi-fronte.png", "van dijk-fronte.png", "kylian-fronte.png", "messi-fronte.png", "fronte3.png", "ronaldo-mondiali.webp", "debruyne-fronte.png", "lukaku-fronte.webp", "cavani-fronte.png", "gavi-fronte.png", "van dijk-fronte.png", "lewandowski-fronte.png", "cavani-fronte.png", "benzema-fronte.png", "kane-fronte.png", "dimaria-fronte.png", "debruyne-fronte.png", "lewandowski-fronte.png"]
+        carte.sort(() => Math.random() - 0.5);
+        let tavolo = document.querySelector('#tavoloDaGioco')
+
+        carte.forEach(element => {
+            tavolo.innerHTML += '<img id="' + element + '" src="retro.jpg" onclick="gira(this)" />'
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+        });
+
+        var counter = document.getElementById("counter");
+        
+        var count = 0;
+
+        function gira(carta) {
+            NcarteGirate++
+            console.log(NcarteGirate)
+            carta.src = carta.id
+            if (NcarteGirate == 1)
+                primaCartaGirata = carta
+            else {
+                NcarteGirate = 0
+                if (carta.src == primaCartaGirata.src) {
+                    count++;
+                    counter.textContent = count;
+                } else {
+                    setTimeout(function () {
+                        carta.src = "retro.jpg";
+                        primaCartaGirata.src = "retro.jpg";
+                    }, 1000);
+                }
+            }
+        }    
+
+
+                              //carta.src = "retro.jpg"
+    </script>
+</body>
+
+</html>
