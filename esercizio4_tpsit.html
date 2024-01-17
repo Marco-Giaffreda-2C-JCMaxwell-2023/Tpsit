@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore e Tabellina</title>
+</head>
+<body>
+
+<p id="contatore"><strong>Contatore:</strong></p>
+
+<script>
+var contatore = 1;
+var intervalID;
+
+function startContatore() {
+    intervalID = setInterval(function() {
+        document.getElementById("contatore").innerHTML = "<strong>Contatore:</strong> " + contatore;
+
+        if (contatore === 5) {
+            clearInterval(intervalID);
+            
+            var tabellinaHTML = "<p>Tabellina del 1 al 10:</p>";
+            for (var i = 1; i <= 10; i++) {
+                tabellinaHTML += i + "<br>";
+            }
+
+            document.getElementById("contatore").innerHTML += "<br>" + tabellinaHTML;
+        } else {
+            contatore++;
+        }
+    }, 1000);
+}
+
+startContatore();
+</script>
+
+</body>
+</html>
