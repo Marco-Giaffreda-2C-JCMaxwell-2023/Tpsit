@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatore e Tabellina</title>
+    <title>Contatore e Tabelline</title>
 </head>
+
 <body>
 
-<p id="contatore"><strong>Contatore:</strong></p>
+    <p id="contatore"><strong>Contatore:</strong></p>
+    <pre id="risultato"><strong></strong></pre>
 
-<script>
-var contatore = 1;
-var intervalID;
+    <script>
+        var contatore = 1;
+        var intervalID;
 
-function startContatore() {
-    intervalID = setInterval(function() {
-        document.getElementById("contatore").innerHTML = "<strong>Contatore:</strong> " + contatore;
+        function startContatore() {
+            intervalID = setInterval(function () {
+                var contatoreElement = document.getElementById("contatore");
+                contatoreElement.innerHTML = "<strong>Contatore:</strong> " + contatore;
 
-        if (contatore === 5) {
-            clearInterval(intervalID);
-            
-            var tabellinaHTML = "<p>Tabellina del 1 al 10:</p>";
-            for (var i = 1; i <= 10; i++) {
-                tabellinaHTML += i + "<br>";
-            }
+                if (contatore === 5) {
+                    clearInterval(intervalID);
 
-            document.getElementById("contatore").innerHTML += "<br>" + tabellinaHTML;
-        } else {
-            contatore++;
+                    var risultatoElement = document.getElementById("risultato");
+                    risultatoElement.innerHTML = "<strong></strong>";
+
+                    for (var i = 1; i <= 10; i++) {
+                        for (var j = 1; j <= 10; j++) {
+                            risultatoElement.innerHTML += (i * j) + "\t";
+                        }
+                        risultatoElement.innerHTML += "\n";
+                    }
+                } else {
+                    contatore++;
+                }
+            }, 1000);
         }
-    }, 1000);
-}
 
-startContatore();
-</script>
+        startContatore();
+    </script>
 
 </body>
+
 </html>
