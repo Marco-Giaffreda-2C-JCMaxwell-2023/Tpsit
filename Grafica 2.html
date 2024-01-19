@@ -20,33 +20,32 @@
 <input type="number" id="numeroDiv" min="1" value="">
 <button onclick="creaDiv()">Crea quadrati</button>
 
-<div id="nuoviDivContainer"></div>
+<div id="DivContainer"></div>
 
 <script>
     function creaDiv() {
-        var numDiv = document.getElementById("numeroDiv").value;
+        var num = document.getElementById("numeroDiv").value;
 
-        var nuoviDivContainer = document.getElementById("nuoviDivContainer");
+        var container = document.getElementById("DivContainer");
 
-        nuoviDivContainer.innerHTML = "";
+        container.innerHTML = "";
 
         var quadratiHTML = "";
 
-        for (var i = 0; i < numDiv; i++) {
+        for (var i = 0; i < num; i++) {
             quadratiHTML += '<div style="width: 30px; height: 30px; border: 1px solid black; display: inline-block; margin: 5px; background-color: ' + getRandomColor() + ';"></div>';
         }
-        nuoviDivContainer.innerHTML =  quadratiHTML;
+        container.innerHTML =  quadratiHTML;
     }
     function getRandomColor() {
-        var letters = "0123456789ABCDEF";
-        var color = "#";
+        var letter = "0123456789ABCDEF";
+        var colore = "#";
         for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
+            colore += letter[Math.floor(Math.random() * 16)];
         }
-        return color;
+        return colore;
     }
 </script>
 
 </body>
 </html>
-
