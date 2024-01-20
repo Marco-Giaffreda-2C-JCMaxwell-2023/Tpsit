@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,38 +15,40 @@
         }
     </style>
 </head>
+
 <body>
 
-   
-<input type="number" id="numeroDiv" min="1" value="">
-<button onclick="creaDiv()">Crea quadrati</button>
 
-<div id="DivContainer"></div>
+    <input type="number" id="numeroDiv" min="1" value="">
+    <button onclick="creaDiv()">Crea quadrati</button>
 
-<script>
-    function creaDiv() {
-        var num = document.getElementById("numeroDiv").value;
+    <div id="DivContainer"></div>
 
-        var container = document.getElementById("DivContainer");
+    <script>
+        function creaDiv() {
+            var num = document.getElementById("numeroDiv").value;
 
-        container.innerHTML = "";
+            var container = document.getElementById("DivContainer");
 
-        var quadratiHTML = "";
+            container.innerHTML = "";
 
-        for (var i = 0; i < num; i++) {
-            quadratiHTML += '<div style="width: 30px; height: 30px; border: 1px solid black; display: inline-block; margin: 5px; background-color: ' + getRandomColor() + ';"></div>';
+            var quadratiHTML = "";
+
+            for (var i = 0; i < num; i++) {
+                quadratiHTML += '<div style="width: 30px; height: 30px; border: 1px solid black; display: inline-block; margin: 5px; background-color: ' + getRandomColor() + ';"></div>';
+            }
+            container.innerHTML = quadratiHTML;
         }
-        container.innerHTML =  quadratiHTML;
-    }
-    function getRandomColor() {
-        var letter = "0123456789ABCDEF";
-        var colore = "#";
-        for (var i = 0; i < 6; i++) {
-            colore += letter[Math.floor(Math.random() * 16)];
+        function getRandomColor() {
+            var letter = "0123456789ABCDEF";
+            var colore = "#";
+            for (var i = 0; i < 6; i++) {
+                colore += letter[Math.floor(Math.random() * 16)];
+            }
+            return colore;
         }
-        return colore;
-    }
-</script>
+    </script>
 
 </body>
+
 </html>
