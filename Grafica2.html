@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grafica 2</title>
     <style>
-        .dynamicSquare {
+        .quadrati {
             width: 30px;
             height: 30px;
             border: 1px solid black;
@@ -17,35 +17,38 @@
 </head>
 
 <body>
-
-
-    <input type="number" id="numeroDiv" min="1" value="">
+    <label for="numeroDiv">Quanti quadrati vuoi generare?</label>
+    <input type="numero" id="numeroDiv" min="1" value="">
     <button onclick="creaDiv()">Crea quadrati</button>
 
-    <div id="DivContainer"></div>
+    <div id="divContainer"></div>
 
     <script>
-        function creaDiv() {
+        function creaDiv() {      //funzione che crea un numero specifico di elementi    
+
             var num = document.getElementById("numeroDiv").value;
 
-            var container = document.getElementById("DivContainer");
+            var container = document.getElementById("divContainer");
 
             container.innerHTML = "";
 
-            var quadratiHTML = "";
-
             for (var i = 0; i < num; i++) {
-                quadratiHTML += '<div style="width: 30px; height: 30px; border: 1px solid black; display: inline-block; margin: 5px; background-color: ' + getRandomColor() + ';"></div>';
+                var newDiv = document.createElement("div");  //creazione nuovo div con ciclo
+                newDiv.className = "quadrati";
+                var randomColor = getRandomColor();
+                newDiv.style.background = randomColor;
+
+                document.getElementById("divContainer").appendChild(newDiv);  //è un metodo che viene utilizzato per aggiungere dinamicamente nuovi elementi
             }
-            container.innerHTML = quadratiHTML;
         }
+
         function getRandomColor() {
-            var letter = "0123456789ABCDEF";
-            var colore = "#";
+            var letters = '0123456789ABCDEF';
+            var color = '#';
             for (var i = 0; i < 6; i++) {
-                colore += letter[Math.floor(Math.random() * 16)];
+                color += letters[Math.floor(Math.random() * 16)];     //funzione random color
             }
-            return colore;
+            return color;
         }
     </script>
 
