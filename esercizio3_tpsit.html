@@ -16,26 +16,25 @@
 
     <script>
         function stampaNumeri() {
-            // Ottiene il valore inserito dall'utente
-            var inputElement = document.getElementById("numeroInput");
+            var inputElement = document.getElementById("numeroInput"); //ottiene il valore inserito dall'utente
             var risultatiDiv = document.getElementById("risultati");
 
             var numero = parseInt(inputElement.value);
 
-            // Verifica se il numero è positivo
+            //verifica se il numero è positivo
             if (numero <= 0) {
                 alert("Inserisci un numero maggiore di zero");
                 return;
             }
 
-            // Costruzione del risultato da mostrare nella pagina
+            //costruisce il risultato da mostrare
             var risultatoHTML = "<p>";
             for (var i = 1; i <= numero; i++) {
                 risultatoHTML += i + " ";
             }
             risultatoHTML += "</p>";
 
-            // Calcola e aggiunge il 10% del numero
+            //calcola e aggiunge il 10% del numero
             var percentuale = Math.round(numero * 0.1);
             risultatoHTML += "<p>Il 10% del numero dato è " + percentuale + "</p>";
 
