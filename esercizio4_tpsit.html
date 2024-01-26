@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatore e Tabelline</title>
+    <title>Tabelline</title>
 </head>
 
 <body>
@@ -16,13 +16,13 @@
         var contatore = 1;
         var intervalID;
 
-        function startContatore() {
+        function startContatore() {  //funzione che serve per avviare il contatore
             intervalID = setInterval(function () {
                 var contatoreElement = document.getElementById("contatore");
                 contatoreElement.innerHTML = "<strong>Contatore:</strong> " + contatore;
 
                 if (contatore === 5) {
-                    clearInterval(intervalID);
+                    clearInterval(intervalID);  //funzione che viene utilizzata per cancellare il timer
 
                     var risultatoElement = document.getElementById("risultato");
                     risultatoElement.innerHTML = "<strong></strong>";
