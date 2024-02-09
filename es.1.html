@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Calcolo peso pianeti</title>
+  <script>
+    function calcolo() {
+      var pesoTerrestre = document.getElementById("peso").value;
+      var pesoPianetaMercurio = pesoTerrestre * 0.38;
+      var pesoPianetaVenere = pesoTerrestre * 0.91;
+      var pesoPianetaMarte = pesoTerrestre * 0.38;
+      var pesoPianetaGiove = pesoTerrestre * 2.34;
+      var pesoPianetaSaturno = pesoTerrestre * 1.06;
+      var pesoPianetaUrano = pesoTerrestre * 0.92;
+      var pesoPianetaNettuno = pesoTerrestre * 1.19;
+      document.getElementById("peso_mercurio").innerText = "Peso su Mercurio: " + pesoPianetaMercurio + " Kg";
+      document.getElementById("peso_venere").innerText = "Peso su Venere: " + pesoPianetaVenere + " Kg";
+      document.getElementById("peso_marte").innerText = "Peso su Marte: " + pesoPianetaMarte + " Kg";
+      document.getElementById("peso_giove").innerText = "Peso su Giove: " + pesoPianetaGiove + " Kg";
+      document.getElementById("peso_saturno").innerText = "Peso su Saturno: " + pesoPianetaSaturno + " Kg";
+      document.getElementById("peso_urano").innerText = "Peso su Urano: " + pesoPianetaUrano + " Kg";
+      document.getElementById("peso_nettuno").innerText = "Peso su Nettuno: " + pesoPianetaNettuno + " Kg";
+    }
+  </script>
+</head>
+
+<body>
+  <label for="peso">Inserisci il peso in Kg</label>
+  <input type="number" id="peso">
+  <button onclick="calcolo()">Calcolo</button><br>
+  <p id="peso_mercurio"></p>
+  <p id="peso_venere"></p>
+  <p id="peso_marte"></p>
+  <p id="peso_giove"></p>
+  <p id="peso_saturno"></p>
+  <p id="peso_urano"></p>
+  <p id="peso_nettuno"></p>
+</body>
+
+</html>
+</html>
