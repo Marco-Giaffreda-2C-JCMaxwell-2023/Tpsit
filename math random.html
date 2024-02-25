@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math random</title>
+</head>
+<body>
+    <script>
+        function generanumeri() {
+            for (let i = 0; i < 1000; i++) {
+                let numCasuali = Math.floor(Math.random() * 6) + 1;
+                document.write(numCasuali + " ");
+            }
+        }
+    </script>
+
+    <button onclick="generanumeri()">Genera numeri casuali</button>
+</body>
+</html>
