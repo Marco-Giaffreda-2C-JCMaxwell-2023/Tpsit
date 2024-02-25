@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Area Cerchio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="raggio">Inserisci il raggio del cerchio:</label>
+    <input type="number" id="raggio">
+    <button onclick="calcolaArea()">Calcola Area</button>
+    <p id="risultato"></p>
+
+    <script>
+        function calcolaArea() {
+            let raggio = document.getElementById("raggio").value;
+
+            if (!raggio || raggio <= 0) {
+                alert("Inserisci un raggio valido.");
+                return;
+            }
+
+            let area = raggio * raggio * 3.14159;
+            document.getElementById("risultato").innerHTML = "L'area del cerchio è: " + area + " unità quadrate.";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio n2</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="bottone1()">Bottone 1</button>
+    <button onclick="bottone2()">Bottone 2</button>
+    <button onclick="bottone3()">Bottone 3</button>
+    <p id="n"></p>
+
+    <script>
+        let n = 0;
+
+        function bottone1() {
+            n = n + 2;
+            document.getElementById("n").innerHTML = n;
+        }
+
+        function bottone2() {
+            n = n + 3;
+            document.getElementById("n").innerHTML = n;
+        }
+
+        function bottone3() {
+            n = n + 7;
+            document.getElementById("n").innerHTML = n;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizi Verifica</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Cambiato a vh */
+            margin: 0;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Esercizio n1</p>
+    <label for="peso">Peso in kg:</label>
+    <input type="number" id="peso">
+    <label for="altezza">Altezza in metri:</label>
+    <input type="number" id="altezza">
+
+    <button onclick="calcolo()">Calcola IMC</button>
+    <p id="IMC"></p>
+
+    <script>
+        function calcolo() {
+            let peso = parseInt(document.getElementById("peso").value);
+            let altezza = parseInt(document.getElementById("altezza").value);
+            let IMC = peso / (altezza * 2);
+            document.getElementById("IMC").innerHTML = IMC;
+
+            if (IMC < 18.5) {
+                document.getElementById("IMC").innerHTML += " - Sottopeso";
+            } else if (IMC < 25) {
+                document.getElementById("IMC").innerHTML += " - Normopeso";
+            } else if (IMC < 30) {
+                document.getElementById("IMC").innerHTML += " - Sovrappeso";
+            } else {
+                document.getElementById("IMC").innerHTML += " - Obesità";
+            }
+        }
+    </script>
+</body>
+
+</html>
