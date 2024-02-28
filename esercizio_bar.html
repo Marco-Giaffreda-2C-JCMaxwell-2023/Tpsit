@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230424/pngtree-many-types-of-liquor-are-lined-up-on-a-bar-image_2510455.jpg');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="istruzioni" onclick="istruzioni()">Istruzioni</button>
+    <button id="menuDrink" onclick="menudrink()">Menu drink</button>
+    <button id="ordini" onclick="ordini()">Ordini</button>
+
+    <script>
+        function istruzioni() {
+            alert("Ciao");
+        }
+
+        function menudrink() {
+            alert("Sono un chatbot pronto per servirti");
+            var listaDrink = "1. Vodka\n2. Mojito\n3. Martini\n4. Negroni\n5. Aperol Spritz";
+            alert("Premi il secondo bottone per avere la lista dei drink:\n\n" + listaDrink);
+        }
+
+        function ordini() {
+            var ordinazioni = prompt("Inserisci le ordinazioni (es. Aperol, Mojito, Martini):");
+            var listaordini = [];
+            var ordine = "";
+
+            for (var i=0; i < ordinazioni.length; i++) {
+                var carattere = ordinazioni[i];
+
+                if (carattere !== ',' && carattere !== ' ') {
+                    ordine += carattere;
+                } else if (ordine !== "") {
+                    listaordini.push(ordine);
+                    ordine = "";
+                }
+            }
+
+            if (ordine !== "") {
+                listaordini.push(ordine);
+            }
+
+            var risultato = "Lista degli ordini:\n";
+            for (var j=0; j < listaordini.length; j++) {
+                risultato += (j + 1) + ". " + listaordini[j] + "\n";
+            }
+
+            alert(risultato);
+        }
+    </script>
+
+</body>
+
+</html>
