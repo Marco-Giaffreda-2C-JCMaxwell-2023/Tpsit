@@ -9,10 +9,10 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
-            overflow: hidden;
         }
 
         #menu {
@@ -47,7 +47,8 @@
         .btn-container {
             display: flex;
             justify-content: center;
-            margin-top: 50px; /* Aumentato il margine superiore per spostare i pulsanti più in basso */
+            margin-top: 50px;
+            
         }
 
         .btn {
@@ -70,7 +71,8 @@
             background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
-            margin-top: -56px; /* Rimuove la barra bianca sopra */
+            margin-top: -56px;
+            
         }
     </style>
 </head>
@@ -118,70 +120,70 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 
-    <script>
-        function istruzioni() {
-            alert("Ciao");
-        }
-
-        function menu() {
-            document.getElementById("benvenuto").style.display = "none";
-            document.getElementById("menu").style.display = "block";
-            alert("Sono un chatbot pronto per servirti.");
-        }
-
-        function ordini() {
-            var ordinazioni = prompt("Inserisci le ordinazioni (es. 1, 3, 4):");
-            var listaOrdini = [];
-            var ordine = "";
-
-            if (ordinazioni !== null && ordinazioni !== "") {
-                for (var i=0; i < ordinazioni.length; i++) {
-                    if (ordinazioni[i] !== ',' && ordinazioni[i] !== ' ') {
-                        ordine += ordinazioni[i];
-                    } else if (ordine !== "") {
-                        listaOrdini.push(ordine);
-                        ordine = "";
-                    }
-                }
-
-                if (ordine !== "") {
-                    listaOrdini.push(ordine);
-                }
-
-                var risultato = "Hai ordinato:\n";
-                for (var j =0; j < listaOrdini.length; j++) {
-                    if (listaOrdini[j] == 1) {
-                        risultato += (j + 1) + ". " + "Vodka" + "\n";
-                    }
-                    if (listaOrdini[j] == 2) {
-                        risultato += (j + 1) + ". " + "Mojito" + "\n";
-                    }
-                    if (listaOrdini[j] == 3) {
-                        risultato += (j + 1) + ". " + "Martini" + "\n";
-                    }
-                    if (listaOrdini[j] == 4) {
-                        risultato += (j + 1) + ". " + "Amaro del capo" + "\n";
-                    }
-                    if (listaOrdini[j] == 5) {
-                        risultato += (j + 1) + ". " + "Whisky" + "\n";
-                    }
-                    if (listaOrdini[j] == 6) {
-                        risultato += (j + 1) + ". " + "Aperol" + "\n";
-                    }
-                }
-
-                alert(risultato);
-            } else {
-                alert("Non hai ordinato nulla.");
+        <script>
+            function istruzioni() {
+                alert("Ciao");
             }
-        }
-    </script>
-</body>
 
-</html>
+            function menu() {
+                document.getElementById("benvenuto").style.display = "none";
+                document.getElementById("menu").style.display = "block";
+                alert("Sono un chatbot pronto per servirti.");
+            }
+
+            function ordini() {
+                var ordinazioni = prompt("Inserisci le ordinazioni (es. 1, 3, 4):");
+                var listaOrdini = [];
+                var ordine = "";
+
+                if (ordinazioni !== null && ordinazioni !== "") {
+                    for (var i = 0; i < ordinazioni.length; i++) {
+                        if (ordinazioni[i] !== ',' && ordinazioni[i] !== ' ') {
+                            ordine += ordinazioni[i];
+                        } else if (ordine !== "") {
+                            listaOrdini.push(ordine);
+                            ordine = "";
+                        }
+                    }
+
+                    if (ordine !== "") {
+                        listaOrdini.push(ordine);
+                    }
+
+                    var risultato = "Hai ordinato:\n";
+                    for (var j = 0; j < listaOrdini.length; j++) {
+
+                        if (listaOrdini[j] == 1) {
+                            risultato += (j + 1) + ". " + "Vodka" + "\n";
+                        }
+                        if (listaOrdini[j] == 2) {
+                            risultato += (j + 1) + ". " + "Mojito" + "\n";
+                        }
+                        if (listaOrdini[j] == 3) {
+                            risultato += (j + 1) + ". " + "Martini" + "\n";
+                        }
+                        if (listaOrdini[j] == 4) {
+                            risultato += (j + 1) + ". " + "Amaro del capo" + "\n";
+                        }
+                        if (listaOrdini[j] == 5) {
+                            risultato += (j + 1) + ". " + "Whisky" + "\n";
+                        }
+                        if (listaOrdini[j] == 6) {
+                            risultato += (j + 1) + ". " + "Aperol" + "\n";
+                        }
+                    }
+
+                    alert(risultato);
+                } else {
+                    alert("Non hai ordinato nulla.");
+                }
+            }
+        </script>
+    </body>
+
+    </html>
