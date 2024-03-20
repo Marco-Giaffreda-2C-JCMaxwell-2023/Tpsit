@@ -91,7 +91,7 @@
             <div class="btn-container">
                 <button onclick="istruzioni()" class="btn btn-outline-primary">Istruzioni</button>
                 <button onclick="menu()" class="btn btn-outline-secondary">Macchine</button>
-                <button onclick="ordini()" class="btn btn-outline-success">Ordini</button>
+                <button onclick="prendiOrdini()" class="btn btn-outline-success">Ordini</button>
             </div>
             <p id="benvenuto"></p>
 
@@ -145,9 +145,7 @@
             alert("Sono un chatbot pronto per aiutarti.");
         }
 
-        function ordini() {                
-
-        }
+        function prendiOrdini() {
             var ordinazioni = prompt("Inserisci le ordinazioni (es. 1, 3, 4):");
             var listaOrdini = [];
             var ordine = "";
@@ -173,29 +171,27 @@
                         risultato += (j + 1) + ". " + "Maserati" + "\n";
                     }
                     if (listaOrdini[j] == 2) {
-                            risultato += (j + 1) + ". " + "Ferrari" + "\n";
-                        }
-                        if (listaOrdini[j] == 3) {
-                            risultato += (j + 1) + ". " + "Lamborghini" + "\n";
-                        }
-                        if (listaOrdini[j] == 4) {
-                            risultato += (j + 1) + ". " + "Porsche" + "\n";
-                        }
-                        if (listaOrdini[j] == 5) {
-                            risultato += (j + 1) + ". " + "Bugatti" + "\n";
-                        }
-                        if (listaOrdini[j] == 6) {
-                            risultato += (j + 1) + ". " + "Mclaren" + "\n";
-                        }
+                        risultato += (j + 1) + ". " + "Ferrari" + "\n";
                     }
-
-                
-
+                    if (listaOrdini[j] == 3) {
+                        risultato += (j + 1) + "." + "Lamborghini" + "\n";
+                    }
+                    if (listaOrdini[j] == 4) {
+                        risultato += (j + 1) + ". " + "Porsche" + "\n";
+                    }
+                    if (listaOrdini[j] == 5) {
+                        risultato += (j + 1) + ". " + "Bugatti" + "\n";
+                    }
+                    if (listaOrdini[j] == 6) {
+                        risultato += (j + 1) + ". " + "Mclaren" + "\n";
+                    }
+                }
                 alert(risultato);
             } else {
                 alert("Non hai ordinato nulla.");
             }
-        
+        }
     </script>
 </body>
+
 </html>
