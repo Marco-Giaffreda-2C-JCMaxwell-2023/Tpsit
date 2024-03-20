@@ -13,6 +13,16 @@
         body {
             height: 100%;
             margin: 0;
+            overflow: scroll;
+        }
+
+        #animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
         #menu {
@@ -74,6 +84,8 @@
 </head>
 
 <body>
+    <img id="animated-background"
+        src="https://cdn.dribbble.com/users/1809003/screenshots/6053544/media/76cffe43765b7bdec80e7e3288ddcc2f.gif">
     <div class="background-container">
         <div class="container my-5">
             <div class="btn-container">
@@ -116,48 +128,51 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
-        <script>
-            function istruzioni() {
-                alert("Ciao");
-            }
+    <script>
+        function istruzioni() {
+            alert("Ciao");
+        }
 
-            function menu() {
-                document.getElementById("benvenuto").style.display = "none";
-                document.getElementById("menu").style.display = "block";
-                alert("Sono un chatbot pronto per aiutarti.");
-            }
+        function menu() {
+            document.getElementById("benvenuto").style.display = "none";
+            document.getElementById("menu").style.display = "block";
+            alert("Sono un chatbot pronto per aiutarti.");
+        }
 
-            function ordini() {
-                var ordinazioni = prompt("Inserisci le ordinazioni (es. 1, 3, 4):");
-                var listaOrdini = [];
-                var ordine = "";
+        function ordini() {                
 
-                if (ordinazioni !== null && ordinazioni !== "") {
-                    for (var i = 0; i < ordinazioni.length; i++) {
-                        if (ordinazioni[i] !== ',' && ordinazioni[i] !== ' ') {
-                            ordine += ordinazioni[i];
-                        } else if (ordine !== "") {
-                            listaOrdini.push(ordine);
-                            ordine = "";
-                        }
-                    }
+        }
+            var ordinazioni = prompt("Inserisci le ordinazioni (es. 1, 3, 4):");
+            var listaOrdini = [];
+            var ordine = "";
 
-                    if (ordine !== "") {
+            if (ordinazioni !== null && ordinazioni !== "") {
+                for (var i = 0; i < ordinazioni.length; i++) {
+                    if (ordinazioni[i] !== ',' && ordinazioni[i] !== ' ') {
+                        ordine += ordinazioni[i];
+                    } else if (ordine !== "") {
                         listaOrdini.push(ordine);
+                        ordine = "";
                     }
+                }
 
-                    var risultato = "Hai ordinato:\n";
-                    for (var j = 0; j < listaOrdini.length; j++) {
+                if (ordine !== "") {
+                    listaOrdini.push(ordine);
+                }
 
-                        if (listaOrdini[j] == 1) {
-                            risultato += (j + 1) + ". " + "Maserati" + "\n";
-                        }
-                        if (listaOrdini[j] == 2) {
+                var risultato = "Hai ordinato:\n";
+                for (var j = 0; j < listaOrdini.length; j++) {
+
+                    if (listaOrdini[j] == 1) {
+                        risultato += (j + 1) + ". " + "Maserati" + "\n";
+                    }
+                    if (listaOrdini[j] == 2) {
                             risultato += (j + 1) + ". " + "Ferrari" + "\n";
                         }
                         if (listaOrdini[j] == 3) {
@@ -174,12 +189,13 @@
                         }
                     }
 
-                    alert(risultato);
-                } else {
-                    alert("Non hai ordinato nulla.");
-                }
-            }
-        </script>
-</body>
+                
 
+                alert(risultato);
+            } else {
+                alert("Non hai ordinato nulla.");
+            }
+        
+    </script>
+</body>
 </html>
