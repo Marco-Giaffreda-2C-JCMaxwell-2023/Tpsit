@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar v.1</title>
+</head>
+
+<body>
+    <div>
+        <p id="menu"></p>
+        <p id="menucount"></p>
+    </div>
+
+    <div>
+        <button id="countBtn" onclick="countDrinks()">Numero Drink nel menu</button>
+        <button id="addBtn" onclick="addDrink()">Add Drink</button>
+        <button id="deleteBtn" onclick="deleteDrink()">Delete Drink</button>
+        <button id="buyBtn" onclick="buyDrinks()">Ordina</button>
+    </div>
+
+    <script>
+        let drinks = ["coke", "fanta", "orange", "the"]
+        let orders = [2, 0, 1];
+
+
+        function countDrinks() {
+            document.getElementById("menucount").textContent = "Numero di drink nel menu: " + drinks.length;
+        }
+
+        function addDrink() {
+            let newDrink = prompt("Inserisci il nome del nuovo drink:");
+            if (newDrink) {
+                drinks.push(newDrink);
+                updateMenu();
+            }
+        }
+
+        function deleteDrink() {
+            let index = prompt("Inserisci l'indice del drink da eliminare:");
+            if (index !== null && index !== "") {
+                index = +index;
+                if (index >= 0 && index < drinks.length) {
+                    drinks.splice(index, 1);
+                    updateMenu();
+                } else {
+                    alert("Indice non valido.");
+                }
+            }
+        }
+
+        function buyDrinks() {
+            let orderedDrinks = orders.map(index => drinks[index]);
+            document.getElementById("menu").textContent = "Lista dei drink ordinati: " + orderedDrinks.join(", ");
+        }
+
+
+        function updateMenu() {
+            document.getElementById("menu").textContent = "Menu: " + drinks.join(", ");
+        }
+
+
+        updateMenu();
+    </script>
+</body>
+
+</html>
