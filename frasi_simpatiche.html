@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array di frasi simpatiche</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Generatore di Frasi Casuali</h1>
+        <button id="generateBtn" class="btn btn-primary">Genera Frase</button>
+        <p class="mt-4" id="randomPhrase"></p>
+    </div>
+
+    <script>
+        
+        var soggetti = [
+            "Il gatto",
+            "La casa",
+            "La macchina",
+            "Il bambino",
+            "La pianta",
+            "Il libro",
+            "Il computer",
+            "Il cielo",
+            "Il mare",
+            "La montagna"
+        ];
+
+       
+        var verbi = [
+            "mangia",
+            "guarda",
+            "guida",
+            "gioca",
+            "studia",
+            "ascolta",
+            "corre",
+            "scrive",
+            "nuota",
+            "dorme"
+        ];  
+
+        
+        var complementiOggetto = [
+            "il topo",
+            "la televisione",
+            "il libro",
+            "il mare",
+            "il film",
+            "la musica",
+            "il parco",
+            "il lavoro",
+            "il cibo",
+            "il sogno"
+        ];
+
+        var aggettivi = [
+            "grande",
+            "piccolo",
+            "rosso",
+            "blu",
+            "felice",
+            "triste",
+            "intelligente",
+            "stupido",
+            "veloce",
+            "lento"
+        ];
+
+        // Funzione per ottenere un elemento casuale da un array
+        function getElementoCasuale(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        // Funzione per generare una frase casuale
+        function generaFraseCasuale() {
+            var soggetto = getElementoCasuale(soggetti);
+            var verbo = getElementoCasuale(verbi);
+            var complementoOggetto = getElementoCasuale(complementiOggetto);
+            var aggettivo = getElementoCasuale(aggettivi);
+
+            return soggetto + " " + verbo + " " + aggettivo + " " + complementoOggetto + ".";
+        }
+
+        // Bottone di generazione della frase
+        document.getElementById('generateBtn').evento('click', function () {
+            var fraseCasuale = generaFraseCasuale();
+            document.getElementById('randomPhrase').testo = fraseCasuale;
+        });
+    </script>
+</body>
+
+</html>
