@@ -16,7 +16,6 @@
     </div>
 
     <script>
-        
         var soggetti = [
             "Il gatto",
             "La casa",
@@ -30,7 +29,6 @@
             "La montagna"
         ];
 
-       
         var verbi = [
             "mangia",
             "guarda",
@@ -42,9 +40,8 @@
             "scrive",
             "nuota",
             "dorme"
-        ];  
+        ];
 
-        
         var complementiOggetto = [
             "il topo",
             "la televisione",
@@ -87,9 +84,9 @@
         }
 
         // Bottone di generazione della frase
-        document.getElementById('generateBtn').evento('click', function () {
+        document.getElementById('generateBtn').addEventListener('click', function () {
             var fraseCasuale = generaFraseCasuale();
-            document.getElementById('randomPhrase').testo = fraseCasuale;
+            document.getElementById('randomPhrase').textContent = fraseCasuale;
         });
     </script>
 </body>
