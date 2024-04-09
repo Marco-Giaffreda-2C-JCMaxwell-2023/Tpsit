@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Marco Giaffreda - Analisi Numerica</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+  <link href="cover.css" rel="stylesheet">
+</head>
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Marco Giaffreda</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Algoritmo 1</a>
+        <a class="nav-link" href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-3">
+    <p>Algoritmo 1: Stampa tutti i numeri da 1 a 100</p>
+    <button onclick="stampaNumeriDa1a100()">Stampa numeri</button>
+    <p id="out1"></p>
+
+    <p>Algoritmo 2: Stampa i numeri da 1 a 100 in un array</p>
+    <button onclick="stampaNumeriInArray()">Stampa</button>
+    <p id="out2"></p>
+
+    <p>Algoritmo 3: Solo numeri pari dentro l'array</p>
+    <button onclick="arrayNumeriPari()">Stampa</button>
+    <p id="out3"></p>
+
+    <p>Algoritmo 4: Solo numeri dispari dentro l'array</p>
+    <button onclick="arrayNumeriDispari()">Stampa</button>
+    <p id="out4"></p>
+
+    <p>Algoritmo 5: Visualizza gli elementi dell'array</p>
+    <button onclick="contatore()">Visualizza elementi</button>
+    <p id="out5"></p>
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+  </footer>
+</div>
+
+<script>
+  let numeriArray = [];
+
+  function stampaNumeriDa1a100() {
+    let output = '';
+    for (let i = 1; i <= 100; i++) {
+      output += i + ' ';
+    }
+    document.getElementById('out1').innerHTML = output;
+  }
+
+  function stampaNumeriInArray() {
+    for (let i = 1; i <= 100; i++) {
+      numeriArray.push(i);
+    }
+    document.getElementById('out2').innerHTML = numeriArray;
+  }
+
+  function arrayNumeriPari() {
+    let numeriPari = [];
+    for (let i = 1; i <= 100; i++) {
+      if (i % 2 === 0) {
+        numeriPari.push(i);
+      }
+    }
+    document.getElementById('out3').innerHTML = numeriPari;
+  }
+
+  function arrayNumeriDispari() {
+    let numeriDispari = [];
+    for (let i = 1; i <= 100; i++) {
+      if (i % 2 !== 0) {
+        numeriDispari.push(i);
+      }
+    }
+    document.getElementById('out4').innerHTML = numeriDispari;
+  }
+
+  function contatore() {
+    let index = 0;
+    const interval = setInterval(function() {
+      if (index < numeriArray.length) {
+        document.getElementById('out5').innerHTML = numeriArray[index];
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
